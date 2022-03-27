@@ -1,5 +1,1 @@
 fastapi
-pyngrok
-pandas
-graphviz
-gunicorn
