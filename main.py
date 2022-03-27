@@ -34,8 +34,8 @@ export_graphviz(tree, out_file=dot_data,
                 special_characters=True, feature_names = impX,class_names=['0','1'])
 graph=pydotplus.graph_from_dot_data(dot_data.getvalue())
 print("Accuracy:",metrics.accuracy_score(Y_test, treePrd))
-graph.write_png('image.png')
-Image(graph.create_png())
+# graph.write_png('image.png')
+# Image(graph.create_png())
 
 Pkl_Filename = "model_tree.pkl"  
 with open(Pkl_Filename, 'wb') as file:  
@@ -87,6 +87,6 @@ def get_music_category(data: Music):
     valence = received['valence']
     pred_name = model.predict([[acousticness, danceability, energy,
                                 instrumentalness, liveness, speechiness, tempo, valence]]).tolist()[0]
-    return FileResponse(some_file_path),{'prediction': pred_name,
+    return {'prediction': pred_name,
             'Accuracy':metrics.accuracy_score(Y_test, treePrd)}
     # return FileResponse(some_file_path)
