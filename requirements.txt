@@ -4,3 +4,4 @@ pydotplus
 graphviz
 pandas
 sklearn
+gunicorn
